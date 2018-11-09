@@ -20850,3 +20850,16 @@ IndexError: list index out of range
 2018-11-09 17:29:50,803 - INFO - http://www.molbase.com/en/chemical-products_M-1770-25944441.html
 2018-11-09 17:29:52,128 - INFO - http://www.molbase.com/en/chemical-products_M-1771-25942421.html
 2018-11-09 17:29:53,405 - INFO - http://www.molbase.com/en/chemical-products_M-1772-25941025.html
+2018-11-09 17:29:54,767 - INFO - http://www.molbase.com/en/chemical-products_M-1773-25933933.html
+2018-11-09 17:29:56,041 - INFO - http://www.molbase.com/en/chemical-products_M-1774-25930645.html
+2018-11-09 17:29:57,544 - INFO - http://www.molbase.com/en/chemical-products_M-1775-25926353.html
+2018-11-09 17:29:59,076 - INFO - http://www.molbase.com/en/chemical-products_M-1776-25922917.html
+2018-11-09 17:30:00,252 - INFO - http://www.molbase.com/en/chemical-products_M-1777-25918949.html
+2018-11-09 17:30:01,483 - INFO - http://www.molbase.com/en/chemical-products_M-1778-25916065.html
+2018-11-09 17:30:02,969 - INFO - http://www.molbase.com/en/chemical-products_M-1779-25910765.html
+2018-11-09 17:30:04,263 - INFO - http://www.molbase.com/en/chemical-products_M-1780-25908309.html
+2018-11-09 17:30:05,504 - INFO - http://www.molbase.com/en/chemical-products_M-1781-25906273.html
+2018-11-09 17:30:06,938 - INFO - http://www.molbase.com/en/chemical-products_M-1782-25901697.html
+2018-11-09 17:30:34,053 - INFO - 103.248.25.99:53281
+2018-11-09 17:30:42,136 - INFO - 193.93.48.120:53732
+2018-11-09 17:30:51,067 - INFO - 36.67.67.195:54646
