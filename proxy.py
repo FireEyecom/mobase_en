@@ -1,6 +1,13 @@
 import requests
 import json
 from queue import Queue
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from log import logger
+from requests.exceptions import ConnectionError, ProxyError
+import pytesseract
+from PIL import Image
+
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
@@ -11,12 +18,19 @@ headers = {
     'Accept-Encoding': 'gzip, deflate'
     }
 
+import datetime
+import time
 
 def get_proxy_ip():
     resp = requests.get(
-        'http://webapi.http.zhimacangku.com/getip?num=1&type=2&pro=&city=0&yys=0&port=1&time=1&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1&regions=')
+        # 5
+        'http://webapi.http.zhimacangku.com/getip?num=1&type=2&pro=&city=0&yys=0&port=1&time=1&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1&regions='
+        # 20
+        # 'http://webapi.http.zhimacangku.com/getip?num=1&type=2&pro=&city=0&yys=0&port=1&time=2'
+    )
     res = json.loads(resp.content.decode())
     print(res)
+    print(datetime.datetime.now().strftime("%H:%M:%S"))
     if res['success']:
         res = res['data'][0]
         ips = res['ip'] + ":" + str(res['port'])
@@ -36,14 +50,62 @@ class IP:
         success = True
         while success:
             try:
-                resp = requests.get(url, headers=headers, proxies={'http': self.ips})
+                resp = requests.get(url, headers=headers, proxies={'http': self.ips}, timeout=3)
                 if resp.status_code == 200:
                     success = not self.flag(resp.content.decode())
                     if not success:
                         return resp
+                    else:
+                        print('robot')
                     self.change_ip()
-            except:
+                else:
+                    print(resp.status_code)
+            except ConnectionError:
+                print(datetime.datetime.now().strftime("%H:%M:%S"))
+                # self.change_ip()
+                self.verify()
+            except ProxyError:
                 self.change_ip()
+            except Exception as e:
+                print(e)
+
+
+    def verify(self):
+        options = webdriver.ChromeOptions()
+        options.add_argument('--proxy-server=http://%s'%self.ips)
+        options.add_argument('--disable-javascript')
+        prefs = {
+            'profile.default_content_setting_values': {
+                'images': 1,
+                'javascript': 2
+            }
+        }
+        options.add_experimental_option('prefs', prefs)
+        driver = webdriver.Chrome(chrome_options=options)
+        driver.get('http://www.molbase.cn')
+        try:
+            img = driver.find_element_by_id('captcha')
+            img = img.get_attribute('src')
+            url = requests.get(img, proxies={'http': self.ips})
+            with open('verify.png', 'wb') as f:
+                f.write(url.content)
+        except:
+            driver.close()
+            self.change_ip()
+            return
+        success = True
+        while success:
+            # WebDriverWait(driver, 5).until(lambda driver: driver.find_element_by_id("searchForm"))
+            # print('******')
+            try:
+                flag = driver.find_element_by_id("searchForm")
+                # print(flag)
+                if flag:
+                    success = False
+            except:
+                pass
+            time.sleep(1)
+        driver.close()
 
 import time
 

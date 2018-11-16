@@ -29,7 +29,14 @@ def trim(content):
 
 
 def fix_url(url):
-    return "http:" + url
+    if url:
+        urls = url.split('//')
+        if len(urls) > 1:
+            return "http:" + url
+        else:
+            return ""
+    else:
+        return ''
 
 
 def get_string(items):
@@ -58,6 +65,7 @@ def price_item(eles):
 
 def info(content):
     eles = etree.HTML(content)
+    structure_img_url = fix_url(filter(eles.xpath('//img[@id="listimg_1"]/@src')))
     eles = eles.xpath('//table[@class="mb_l_mb_r_tb pinfo"]')[0]
     eles = eles.xpath('./tr')
     name = eles[0].xpath('./td/a/h1/text()')
@@ -156,19 +164,19 @@ def NMR(content):
         ele = etree.HTML(eles)
         try:
             tables = ele.xpath('//div[@style="margin:9px;background-color:#fff;"]')
-            nrm_h1 = tables[0].xpath('string(.)').strip()
-            nrm_h1_url = filter(tables[0].xpath('./img/@src'))
-            nrm_13c = tables[1].xpath('string(.)').strip()
-            nrm_13c_url = filter(tables[1].xpath('./img/@src'))
-            return dict(nrm_h1=nrm_h1, nrm_h1_url=nrm_h1_url, nrm_13c=nrm_13c,
-                        nrm_13c_url=nrm_13c_url)
+            nmr_h1 = tables[0].xpath('string(.)').strip()
+            nmr_h1_url = filter(tables[0].xpath('./img/@src'))
+            nmr_13c = tables[1].xpath('string(.)').strip()
+            nmr_13c_url = filter(tables[1].xpath('./img/@src'))
+            return dict(nmr_h1=nmr_h1, nmr_h1_url=nmr_h1_url, nmr_13c=nmr_13c,
+                        nmr_13c_url=nmr_13c_url)
         except:
             nodata = ele.xpath('//div[@class="nodata"]')
             if len(nodata) == 0:
-                print('nrm error')
+                print('nmr error')
                 return NMR(content)
-            return dict(nrm_h1='', nrm_h1_url='', nrm_13c='', nrm_13c_url='')
-    return dict(nrm_h1='', nrm_h1_url='', nrm_13c='', nrm_13c_url='')
+            return dict(nmr_h1='', nmr_h1_url='', nmr_13c='', nmr_13c_url='')
+    return dict(nmr_h1='', nmr_h1_url='', nmr_13c='', nmr_13c_url='')
 
 
 

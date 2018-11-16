@@ -2,17 +2,7 @@ import requests
 import pymongo
 from proxy import IpPool
 from lxml import etree
-import logging
-
-logger = logging.getLogger('spider')
-logger.setLevel(level = logging.INFO)
-handler = logging.FileHandler("log.txt")
-handler.setLevel(logging.INFO)
-# handler.setLevel(logging.ERROR)
-# formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+from log import logger
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
@@ -23,7 +13,7 @@ headers = {
     'Accept-Encoding': 'gzip, deflate'
     }
 
-ips = None
+ips = '52.79.116.117:3128'
 
 
 def get_proxy_ips():
@@ -31,7 +21,8 @@ def get_proxy_ips():
     # if ips:
     #     resp = requests.get('http://10.9.60.13:5010/delete/?proxy=%s' % ips, headers)
     # resp = requests.get('http://10.9.60.13:5010/get', headers)
-    resp = requests.get('http://123.207.35.36:5010/get', headers)
+    resp = requests.get('http://10.9.60.13:8080/get', headers)
+    # resp = requests.get('http://localhost:5010/get', headers)
     print(resp.text)
     logger.info(resp.text)
     return resp.text
@@ -45,34 +36,50 @@ def change_ips():
 
 def get_data(url):
     success = False
+    retry = 3
     global ips
     if not ips:
         ips = get_proxy_ips()
     while not success:
+        retry -= 1
         try:
             resp = requests.get(url, headers=headers, proxies={'http': ips}, timeout=3)
             if resp.status_code == 200:
                 success = True
                 return resp
-            ips = get_proxy_ips()
-        except:
-            ips = get_proxy_ips()
+            if retry <0:
+                change_ips()
+        except Exception as e:
+            print(e)
+            logger.error(e, url)
+            if retry <0:
+                change_ips()
+            # ips = get_proxy_ips()
 
 
-
-def verify(content):
-    eles = etree.HTML(content)
-    ele = eles.xpath('//input[@name="checkcode"]')
-    if len(ele) < 1:
-        return True
-
-# ip_pool = IpPool(1, verify)
+# def verify(content):
+#     eles = etree.HTML(content)
+#     ele = eles.xpath('//input[@name="checkcode"]')
+#     if len(ele) < 1:
+#         return True
 #
+# ip_pool = IpPool(1, verify)
+
 # def get_data(url):
 #     return ip_pool.get(url)
 
-def get_local_data(url):
-    return requests.get(url, headers=headers, timeout=3)
+# def get_local_data(url):
+#     success = False
+#     while not success:
+#         try:
+#             resp = requests.get(url, headers=headers, proxies={'http': ips}, timeout=3)
+#             if resp.status_code == 200:
+#                 success = True
+#                 return resp
+#             else:
+#                 print(resp.status_code)
+#         except Exception as e:
+#             print(e)
 
 # get_data = get_local_data
 
@@ -90,8 +97,24 @@ def en_cache():
     # collection.remove({'WGK Germany:': '3'})
     return collection
 
+def en_olbase_url():
+    client = pymongo.MongoClient('10.9.60.13', 27017, username='olbase', password='mongodb', authSource='OLBASE', authMechanism='DEFAULT')
+    db = client.OLBASE
+    collection = db.en_olbase_url
+    # collection.remove({'WGK Germany:': '3'})
+    return collection
+
+def en_olbase_err():
+    client = pymongo.MongoClient('10.9.60.13', 27017, username='olbase', password='mongodb', authSource='OLBASE', authMechanism='DEFAULT')
+    db = client.OLBASE
+    collection = db.en_olbase_err_url
+    # collection.remove({'WGK Germany:': '3'})
+    return collection
+
 db_en_olbase = mongo()
+db_en_olbase_url = en_olbase_url()
 db_en_cache = en_cache()
+db_en_err = en_olbase_err()
 
 
 if __name__ == '__main__':
