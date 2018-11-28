@@ -1,8 +1,11 @@
 import requests
-import pymongo
-from proxy import IpPool
+from cli.log import get_log
+from cli.proxy import IpPool
+import json
+import datetime
 from lxml import etree
-from log import logger
+
+logger = get_log('http')
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
@@ -23,13 +26,30 @@ def get_proxy_ips():
     # resp = requests.get('http://10.9.60.13:5010/get', headers)
     while True:
         try:
-            resp = requests.get('http://10.9.60.13:8080/get', headers)
+            resp = requests.get('http://123.207.35.36:5010/get', headers)
             # resp = requests.get('http://localhost:5010/get', headers)
             print(resp.text)
             logger.info(resp.text)
             return resp.text
         except:
             pass
+
+# 代理
+# def get_proxy_ips():
+#     resp = requests.get(
+#         # 5
+#         'http://webapi.http.zhimacangku.com/getip?num=1&type=2&pro=&city=0&yys=0&port=1&time=1&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1&regions='
+#         # 20
+#         # 'http://webapi.http.zhimacangku.com/getip?num=1&type=2&pro=&city=0&yys=0&port=1&time=2'
+#     )
+#     res = json.loads(resp.content.decode())
+#     print(res)
+#     print(datetime.datetime.now().strftime("%H:%M:%S"))
+#     logger.info(resp.content.decode())
+#     if res['success']:
+#         res = res['data'][0]
+#         ips = res['ip'] + ":" + str(res['port'])
+#         return ips
 
 def change_ips():
     global ips
@@ -47,28 +67,29 @@ def get_data(url):
     while not success:
         retry -= 1
         try:
-            resp = requests.get(url, headers=headers, proxies={'http': ips}, timeout=3)
+            resp = requests.get(url, headers=headers, proxies={'http': ips}, timeout=6)
             if resp.status_code == 200:
                 success = True
                 return resp
-            if retry <0:
-                change_ips()
+            # if retry <0:
+            #    change_ips()
         except Exception as e:
             print(e)
-            logger.error(str(e), url)
-            if retry <0:
-                change_ips()
+            logger.error(str(e)+"*_*"+url)
+            # if retry <0:
+            #    change_ips()
             # ips = get_proxy_ips()
 
 
 # def verify(content):
-#     eles = etree.HTML(content)
-#     ele = eles.xpath('//input[@name="checkcode"]')
-#     if len(ele) < 1:
-#         return True
+#     # eles = etree.HTML(content)
+#     # ele = eles.xpath('//input[@name="checkcode"]')
+#     # if len(ele) < 1:
+#     #     return True
+#     return True
 #
 # ip_pool = IpPool(1, verify)
-
+#
 # def get_data(url):
 #     return ip_pool.get(url)
 
@@ -87,39 +108,5 @@ def get_data(url):
 
 # get_data = get_local_data
 
-def mongo():
-    client = pymongo.MongoClient('10.9.60.13', 27017, username='olbase', password='mongodb', authSource='OLBASE', authMechanism='DEFAULT')
-    db = client.OLBASE
-    collection = db.en_olbase
-    # collection.remove({'WGK Germany:': '3'})
-    return collection
-
-def en_cache():
-    client = pymongo.MongoClient('10.9.60.13', 27017, username='olbase', password='mongodb', authSource='OLBASE', authMechanism='DEFAULT')
-    db = client.OLBASE
-    collection = db.en_cache
-    # collection.remove({'WGK Germany:': '3'})
-    return collection
-
-def en_olbase_url():
-    client = pymongo.MongoClient('10.9.60.13', 27017, username='olbase', password='mongodb', authSource='OLBASE', authMechanism='DEFAULT')
-    db = client.OLBASE
-    collection = db.en_olbase_url
-    # collection.remove({'WGK Germany:': '3'})
-    return collection
-
-def en_olbase_err():
-    client = pymongo.MongoClient('10.9.60.13', 27017, username='olbase', password='mongodb', authSource='OLBASE', authMechanism='DEFAULT')
-    db = client.OLBASE
-    collection = db.en_olbase_err_url
-    # collection.remove({'WGK Germany:': '3'})
-    return collection
-
-db_en_olbase = mongo()
-db_en_olbase_url = en_olbase_url()
-db_en_cache = en_cache()
-db_en_err = en_olbase_err()
-
-
 if __name__ == '__main__':
-    mongo()
+    pass

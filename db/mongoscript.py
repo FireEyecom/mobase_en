@@ -1,4 +1,4 @@
-from cli import db_en_cache, db_en_olbase_url
+from cli.cli import db_en_cache, db_en_olbase_url
 
 
 if __name__ == '__main__':

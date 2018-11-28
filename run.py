@@ -11,21 +11,23 @@ charts = ['a', 'b', 'c', 'd', 'e',
           'z', '1', '2', '3', '4',
           '5', '6', '7', '8', '9']
 
-def get_url(chart):
-    spider = Spider(1, chart)
-    spider.run()
-
-def run():
-    p_list = []
-    for chart in charts:
-        p = Process(target=get_url, args=(chart, ))
-        p.daemon = True
-        p.start()
-        p_list.append(p)
-
-    for p in p_list:
-        p.join()
+# def get_url(chart):
+#     spider = Spider(1, chart)
+#     spider.run()
+#
+# def run():
+#     p_list = []
+#     for chart in charts:
+#         p = Process(target=get_url, args=(chart, ))
+#         p.daemon = True
+#         p.start()
+#         p_list.append(p)
+#
+#     for p in p_list:
+#         p.join()
 
 
 if __name__ == '__main__':
-    inspect(2)
+    crawl(25)
+    # spider = Spider(1, '9')
+    # spider.run()

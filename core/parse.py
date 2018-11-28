@@ -1,6 +1,6 @@
-from cli.cli import get_data
 from lxml import etree
 import re
+from cli.cli import get_data
 
 
 def filter(eles):

@@ -1,10 +1,12 @@
 from cli.cli import get_data
-from db.db import mongo, db_en_err, en_olbase_err
+from db.db import mongo, db_en_err, en_olbase_err, db_en_olbase, DuplicateKeyError
 from core.parse import parses, filter_ele
 import uuid
 from multiprocessing import Process, Queue
 from queue import Empty
 from cli.cli import get_log
+import random
+import time
 
 log = get_log('inspect')
 
@@ -15,28 +17,29 @@ def run(size):
         p.start()
     db = db_en_err.find()
     count = 0
-    # while False:
-    #     try:
-    #         url = db.next()['url']
-    #         count += 1
-    #         # if url not in self.url_pool:
-    #         res = db_en_olbase.find_one({'url': url})
-    #         if not res:
-    #             queue = random.choice(queues)
-    #             queue.put(url)
-    #         else:
-    #             db_en_err.remove({"url": url})
-    #     except StopIteration:
-    #         log.error("can not find data in db_en_olbase_url")
-    #     except Exception as e:
-    #         log.exception(e)
-    #         db = db_en_err.find()[count:]
+    while True:
+        try:
+            url = db.next()['url']
+            count += 1
+            # if url not in self.url_pool:
+            res = db_en_olbase.find_one({'url': url})
+            if not res:
+                queue = random.choice(queues)
+                queue.put(url)
+            else:
+                db_en_err.remove({"url": url})
+        except StopIteration:
+            log.error("can not find data in db_en_olbase_url")
+        except Exception as e:
+            log.exception(e)
+            db = db_en_err.find()[count:]
 
 def process(queue):
     while True:
         try:
             url = queue.get(True, timeout=3)
             parse(url)
+            time.sleep(1)
         except Empty:
             pass
         except Exception as e:
@@ -53,6 +56,8 @@ def parse(url):
             else:
                 dt[func.__name__] = res
         pipline(dt)
+    except DuplicateKeyError:
+        pass
     except Exception as e:
         # en_olbase_err().insert({'url': url, 'msg': str(e)})
         log.exception(e)
@@ -105,6 +110,7 @@ def save_img(url):
     with open('base_img/%s' % name, 'wb') as f:
         f.write(resp.content)
     return name
+
 
 if __name__ == '__main__':
     run(5)

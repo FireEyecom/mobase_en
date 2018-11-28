@@ -1,21 +1,13 @@
-from cli import get_data, change_ips,mongo, db_en_cache, db_en_olbase, db_en_err
+from cli.cli import get_data, change_ips
+from db.db import  db_en_cache, db_en_olbase
 from lxml import etree
 import re
 from threading import Thread
 import pickle
 import os
-from log import get_log, log
+from cli.log import get_log
 
-
-
-
-
-
-# def p_start(t_list):
-#     for list in t_list:
-#         # t = Thread(target=parse, args=(list,))
-#         # t.start()
-#         parse(list)
+log = get_log('link_list')
 
 
 def process(queue):
@@ -133,7 +125,7 @@ class Spider:
             flag = self.query_url_data(self.url)
             while flag:
                 flag = self.query_url_data(self.url)
-        self.get_chart_page(self.chart.upper())
+        # self.get_chart_page(self.chart.upper())
             # for chart in charts[charts.index(self.chart) + 1:]:
             #     self.chart = chart
             #     self.get_chart_page(chart.upper())

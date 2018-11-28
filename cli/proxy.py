@@ -2,11 +2,13 @@ import requests
 import json
 from queue import Queue
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from log import logger
 from requests.exceptions import ConnectionError, ProxyError
 # import pytesseract
 # from PIL import Image
+from cli.log import get_log
+
+
+log = get_log("http")
 
 
 headers = {
@@ -19,7 +21,7 @@ headers = {
     }
 
 import datetime
-import time
+
 
 def get_proxy_ip():
     resp = requests.get(
@@ -31,6 +33,7 @@ def get_proxy_ip():
     res = json.loads(resp.content.decode())
     print(res)
     print(datetime.datetime.now().strftime("%H:%M:%S"))
+    log.info(resp.content.decode())
     if res['success']:
         res = res['data'][0]
         ips = res['ip'] + ":" + str(res['port'])
@@ -52,22 +55,24 @@ class IP:
             try:
                 resp = requests.get(url, headers=headers, proxies={'http': self.ips}, timeout=3)
                 if resp.status_code == 200:
-                    success = not self.flag(resp.content.decode())
-                    if not success:
-                        return resp
-                    else:
-                        print('robot')
-                    self.change_ip()
+                    # success = not self.flag(resp.content.decode())
+                    # if not success:
+                    #     return resp
+                    # else:
+                    #     print('robot')
+                    return resp
                 else:
+                    # self.change_ip()
                     print(resp.status_code)
             except ConnectionError:
-                print(datetime.datetime.now().strftime("%H:%M:%S"))
+                # print(datetime.datetime.now().strftime("%H:%M:%S"))
                 # self.change_ip()
                 self.verify()
             except ProxyError:
+                print('proxy err')
                 self.change_ip()
             except Exception as e:
-                print(e)
+                log.error(str(e))
 
 
     def verify(self):
@@ -98,6 +103,10 @@ class IP:
             # WebDriverWait(driver, 5).until(lambda driver: driver.find_element_by_id("searchForm"))
             # print('******')
             try:
+                url = driver.current_url
+                print(url)
+                if url == 'http://www.molbase.cn/':
+                    success = False
                 flag = driver.find_element_by_id("searchForm")
                 # print(flag)
                 if flag:

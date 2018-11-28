@@ -1,11 +1,13 @@
-from cli.cli import get_data
-from db.db import db_en_cache, en_olbase_err, mongo, db_en_olbase
+from cli.cli import get_data, change_ips
+from db.db import db_en_cache, en_olbase_err, mongo, db_en_olbase, DuplicateKeyError
 from core.parse import parses, filter_ele
 import uuid
 from multiprocessing import Process, Queue
+from threading import Thread
 import random
 from queue import Empty
 from cli.log import get_log
+import time
 
 log = get_log('engin')
 
@@ -26,8 +28,12 @@ def run(size):
             if not res:
                 queue = random.choice(queues)
                 queue.put(url)
+            # time.sleep(1)
         except StopIteration:
-            log.error("can not find data in db_en_olbase_url")
+            # log.error("can not find data in db_en_olbase_url")
+            for p in p_list:
+                p.join()
+            time.sleep(500)
         except Exception as e:
             log.exception(e)
             db = db_en_cache.find()[count:]
@@ -37,25 +43,34 @@ def process(queue):
         try:
             url = queue.get(True, timeout=3)
             parse(url)
+            # time.sleep(0.5)
         except Empty:
             pass
         except Exception as e:
             log.exception(e)
 
 def parse(url):
-    try:
-        content = get_data(url).content.decode()
-        dt = {'url': url}
-        for func in parses:
-            res = func(content)
-            if isinstance(res, dict):
-                dt[func.__name__] = filter_ele(res)
-            else:
-                dt[func.__name__] = res
-        pipline(dt)
-    except Exception as e:
-        en_olbase_err().insert({'url': url, 'msg': str(e)})
-        log.exception(e)
+    flag = True
+    while flag:
+        try:
+            content = get_data(url).content.decode()
+            dt = {'url': url}
+            for func in parses:
+                res = func(content)
+                if isinstance(res, dict):
+                    dt[func.__name__] = filter_ele(res)
+                else:
+                    dt[func.__name__] = res
+            pipline(dt)
+            flag = False
+        except DuplicateKeyError:
+            flag = False
+        except IndexError:
+            change_ips()
+        except Exception as e:
+            en_olbase_err().insert({'url': url, 'msg': str(e)})
+            log.exception(e)
+            flag = False
 
 def pipline(item):
     item['NMR']['nmr_13c_img'] = save_Img(item['NMR']['nmr_13c_url'])
