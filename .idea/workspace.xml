@@ -3,46 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9d0dbf5e-bc33-4023-aee2-7f123d6c6649" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_1.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_1.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_2.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_2.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_3.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_3.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_4.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_4.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_5.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_5.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_6.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_6.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_7.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_7.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_8.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_8.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_9.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_9.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_a.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_a.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_b.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_b.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_c.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_c.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_d.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_d.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_e.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_e.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_f.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_f.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_g.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_g.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_h.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_h.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_i.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_i.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_l.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_l.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_m.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_m.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_n.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_n.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_o.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_o.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_p.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_p.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_r.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_r.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_s.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_s.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_t.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_t.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_v.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_v.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/log_z.plk" beforeDir="false" afterPath="$PROJECT_DIR$/cache/log_z.plk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli/log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli/proxy.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli/proxy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/parse.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/parse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mongoscript.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/mongoscript.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/engin/engin.py" beforeDir="false" afterPath="$PROJECT_DIR$/engin/engin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engin/inspect.py" beforeDir="false" afterPath="$PROJECT_DIR$/engin/inspect.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,7 +31,61 @@
     <favorites_list name="mobase_en" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proxy.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cli/proxy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#2632#3517#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/db.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="696">
+              <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+              <folding>
+                <element signature="e#78#475#0" expanded="true" />
+                <element signature="e#411#807#0" expanded="true" />
+                <element signature="e#748#1065#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="engin.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/engin/engin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="117" column="15" lean-forward="true" selection-start-line="117" selection-start-column="15" selection-end-line="117" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#2869#3104#0" expanded="true" />
+                <element signature="e#3129#3315#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,7 +149,6 @@
         <option value="$PROJECT_DIR$/core/__init__.py" />
         <option value="$PROJECT_DIR$/core/parse.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/db/db.py" />
         <option value="$PROJECT_DIR$/cli/log.py" />
         <option value="$PROJECT_DIR$/log/log_engin.log" />
         <option value="$PROJECT_DIR$/inspect.py" />
@@ -140,9 +156,10 @@
         <option value="$PROJECT_DIR$/sa.html" />
         <option value="$PROJECT_DIR$/core/spider.py" />
         <option value="$PROJECT_DIR$/cli/proxy.py" />
-        <option value="$PROJECT_DIR$/engin/engin.py" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/cli/cli.py" />
+        <option value="$PROJECT_DIR$/db/db.py" />
+        <option value="$PROJECT_DIR$/engin/engin.py" />
       </list>
     </option>
   </component>
@@ -166,7 +183,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,12 +193,18 @@
             <path>
               <item name="mobase_en" type="b2602c69:ProjectViewProjectNode" />
               <item name="mobase_en" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mobase_en" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobase_en" type="462c0819:PsiDirectoryNode" />
+              <item name="engin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,19 +343,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3287037" />
       <window_info anchor="right" id="Cargo" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013459" side_tool="true" weight="0.64660496" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013459" side_tool="true" weight="0.53858024" />
       <window_info anchor="right" id="Redis Servers" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4986541" weight="0.64660496" />
+      <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.4986541" weight="0.53858024" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49798116" weight="0.64660496" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.5154321" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798116" weight="0.5555556" />
       <window_info anchor="right" id="Mongo Explorer" order="3" weight="0.32974428" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.61419755" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.6342593" />
       <window_info anchor="right" id="Remote Host" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992272" visible="true" weight="0.20457605" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992272" visible="true" weight="0.17227456" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="SciView" order="8" />
@@ -343,37 +367,36 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.53858024" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32921174" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932706" weight="0.54012346" />
       <window_info anchor="right" id="Cargo" order="4" />
       <window_info anchor="right" id="Remote Host" order="5" />
+      <window_info id="Favorites" order="2" sideWeight="0.5007728" side_tool="true" weight="0.24966353" />
       <window_info anchor="right" id="SciView" order="8" />
       <window_info id="Structure" order="1" sideWeight="0.5007728" side_tool="true" weight="0.24966353" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.5007728" side_tool="true" weight="0.24966353" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3287037" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32921174" />
       <window_info anchor="right" id="Redis Servers" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992272" visible="true" weight="0.24966353" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Mongo Explorer" order="3" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932706" weight="0.74691355" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067294" side_tool="true" weight="0.5555556" />
       <window_info anchor="bottom" id="File Transfer" order="13" weight="0.3287037" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.6759259" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.46296296" />
     </layout-to-restore>
@@ -411,6 +434,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="add cache" />
     <MESSAGE value="change crawl" />
     <MESSAGE value="stable" />
@@ -486,13 +510,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inspect.py" />
-    <entry file="file://$PROJECT_DIR$/db/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/engin/inspect.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -626,10 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1032">
           <caret line="106" column="66" selection-start-line="106" selection-start-column="66" selection-end-line="106" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <element signature="e#1184#2208#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -675,16 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/verify.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -695,35 +698,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engin/engin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/parse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1512">
           <caret line="173" column="32" selection-start-line="173" selection-start-column="32" selection-end-line="173" selection-end-column="32" />
-          <folding>
-            <element signature="e#86#140#0" expanded="true" />
-            <element signature="e#1284#2149#0" expanded="true" />
-            <element signature="e#3068#3514#0" expanded="true" />
-            <element signature="e#3540#3995#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cli/proxy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#2568#2593#0" expanded="true" />
-            <element signature="e#3550#4966#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,9 +709,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli/proxy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#1792#2272#0" expanded="true" />
+            <element signature="e#2632#3517#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding>
+            <element signature="e#78#475#0" expanded="true" />
+            <element signature="e#411#807#0" expanded="true" />
+            <element signature="e#748#1065#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engin/engin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="117" column="15" lean-forward="true" selection-start-line="117" selection-start-column="15" selection-end-line="117" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+            <element signature="e#2869#3104#0" expanded="true" />
+            <element signature="e#3129#3315#0" expanded="true" />
           </folding>
         </state>
       </provider>
