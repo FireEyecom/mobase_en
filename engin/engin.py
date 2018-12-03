@@ -26,8 +26,11 @@ def run(size):
             # if url not in self.url_pool:
             res = db_en_olbase.find_one({'url': url})
             if not res:
-                queue = random.choice(queues)
-                queue.put(url)
+                res = repeat().find_one({'url': url})
+                if not res:
+                    queue = random.choice(queues)
+                    queue.put(url)
+                    print(url)
             # time.sleep(1)
         except StopIteration:
             # log.error("can not find data in db_en_olbase_url")
