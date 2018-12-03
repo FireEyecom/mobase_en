@@ -102,20 +102,20 @@ def save_Img(url):
     """
     if not url:
         return ""
-    resp = get_data(url)
+    # resp = get_data(url)
     name = str(uuid.uuid4()) + '.png'
-    with open('imgs/%s' % name, 'wb') as f:
-        f.write(resp.content)
+    # with open('imgs/%s' % name, 'wb') as f:
+    #     f.write(resp.content)
     return name
 
 def save_img(url):
     if not url:
         return ""
-    resp = get_data(url)
+    # resp = get_data(url)
     name = str(uuid.uuid4()) + '.png'
-    with open('base_img/%s' % name, 'wb') as f:
-        f.write(resp.content)
+    # with open('base_img/%s' % name, 'wb') as f:
+    #     f.write(resp.content)
     return name
 
 if __name__ == '__main__':
-    run(10)
+    run(30)

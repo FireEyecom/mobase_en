@@ -28,6 +28,6 @@ charts = ['a', 'b', 'c', 'd', 'e',
 
 
 if __name__ == '__main__':
-    crawl(25)
+    crawl(30)
     # spider = Spider(1, '9')
     # spider.run()
