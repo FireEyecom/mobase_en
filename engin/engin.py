@@ -1,5 +1,5 @@
 from cli.cli import get_data, change_ips
-from db.db import db_en_cache, en_olbase_err, mongo, db_en_olbase, DuplicateKeyError
+from db.db import db_en_cache, en_olbase_err, mongo, db_en_olbase, DuplicateKeyError, repeat
 from core.parse import parses, filter_ele
 import uuid
 from multiprocessing import Process, Queue
@@ -89,7 +89,7 @@ def pipline(item):
     props['item'] = item
     print(props)
     # self.url_pool.remove(item['url'])
-    mongo().insert(props)
+    repeat().insert(props)
     # db_en_cache.remove({'url':item['url']})
     # db_en_olbase_url.remove({'url': item['url']})
     # self.local(val_list)
