@@ -11,7 +11,7 @@ def mongo():
 
 def repeat():
     # client = pymongo.MongoClient('10.9.60.13', 27017, username='olbase', password='mongodb', authSource='OLBASE', authMechanism='DEFAULT')
-    client = pymongo.MongoClient('192.168.199.219', 27017)
+    client = pymongo.MongoClient('localhost', 27017)
     db = client.molbase
     collection = db.en_olbase_repeat
     # collection.remove({'WGK Germany:': '3'})
